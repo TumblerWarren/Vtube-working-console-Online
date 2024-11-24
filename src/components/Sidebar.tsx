@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Terminal, Bot, Volume2, Mic, Info } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Terminal, Bot, Volume2, Mic, Info, Monitor } from 'lucide-react';
 
 interface Config {
   input: string | null;
@@ -48,6 +48,13 @@ export default function Sidebar({ isOpen, toggle, onNavigate, hasUnsavedChanges,
         >
           <Terminal size={20} />
           <span className={`${!isOpen && 'hidden'}`}>Terminal</span>
+        </div>
+        <div
+          onClick={() => onNavigate('monitor')}
+          className="flex items-center gap-3 p-2 hover:bg-gray-800 rounded cursor-pointer"
+        >
+          <Monitor size={20} />
+          <span className={`${!isOpen && 'hidden'}`}>App Monitor</span>
         </div>
         <div
           onClick={() => onNavigate('input')}

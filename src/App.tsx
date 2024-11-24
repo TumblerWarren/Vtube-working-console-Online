@@ -5,6 +5,7 @@ import Controls from './components/Controls';
 import ModelSelection from './components/ModelSelection';
 import TTSSettings from './components/TTSSettings';
 import InputSelection from './components/InputSelection';
+import ApplicationMonitor from './components/ApplicationMonitor';
 import { socketService } from './services/socketService';
 import { envService } from './services/envService';
 import { Menu } from 'lucide-react';
@@ -215,6 +216,8 @@ function App() {
             </div>
           </>
         );
+      case 'monitor':
+        return <ApplicationMonitor />;
       case 'input':
         return (
           <InputSelection
